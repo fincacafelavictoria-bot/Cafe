@@ -53,7 +53,7 @@ a:hover {
 
 /* Nuevo estilo para la imagen del logo */
 .main-nav .logo img {
-    height: 100px; /* Tamaño del logo */
+    height: 50px; /* Tamaño del logo */
     width: auto;
     display: block;
 }
@@ -441,4 +441,5 @@ section {
 
 .social-contact a:hover {
     color: #a0826b;
+
 }
