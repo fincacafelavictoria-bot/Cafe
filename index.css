@@ -1,0 +1,475 @@
+/* ==================================== */
+/* 1. VARIABLES Y RESET BÁSICO */
+/* ==================================== */
+:root {
+    --color-primary: #5a3e36; /* Marrón oscuro del café / Texto principal */
+    --color-secondary: #a37f5d; /* Marrón medio / Botones, acentos */
+    --color-accent: #8b4513; /* Marrón fuerte / Títulos */
+    --color-light: #f4f2ed; /* Blanco crema / Fondo */
+    --color-dark: #333; /* Gris oscuro / Fondo de footer */
+    --font-heading: 'Georgia', serif;
+    --font-body: 'Arial', sans-serif;
+    --spacing-md: 20px;
+    --spacing-lg: 40px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--color-primary);
+    background-color: var(--color-light);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-secondary);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-accent);
+}
+
+/* ==================================== */
+/* 2. LAYOUT Y UTILIDADES */
+/* ==================================== */
+
+/* Contenedor principal para centrar el contenido */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-md) 0;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    color: var(--color-accent);
+    margin-bottom: 0.5em;
+    line-height: 1.2;
+}
+
+h1 { font-size: 2.5em; }
+h2 { font-size: 2em; }
+h3 { font-size: 1.5em; }
+
+/* Botón de Llamada a la Acción */
+.cta-button {
+    display: inline-block;
+    background-color: var(--color-secondary);
+    color: var(--color-light);
+    padding: 12px 25px;
+    border-radius: 5px;
+    margin-top: var(--spacing-md);
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: var(--color-accent);
+}
+
+/* ==================================== */
+/* 3. ENCABEZADO Y NAVEGACIÓN */
+/* ==================================== */
+.main-header {
+    background-color: rgba(244, 242, 237, 0.95); /* Fondo claro semi-transparente */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* TAMAÑO Y ESTILO DEL LOGO (SOLUCIÓN) */
+.main-nav .logo img {
+    height: 45px; /* Tamaño pequeño fijo */
+    width: auto;
+    display: block;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: var(--color-primary);
+    font-weight: 500;
+    padding: 5px 0;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-links a:hover {
+    color: var(--color-accent);
+    border-bottom: 2px solid var(--color-accent);
+}
+
+/* ==================================== */
+/* 4. SECCIÓN HERO (PRINCIPAL) - CON IMAGEN DE FONDO */
+/* ==================================== */
+.hero-section {
+    /* USANDO LA IMAGEN image_76b20c.jpg QUE SUBISTE */
+    background: url('img/IMG-20250816-WA0013.jpg') center/cover no-repeat; 
+    
+    height: 70vh; /* Altura de la vista */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--color-light); /* Color del texto (blanco/crema) */
+    position: relative;
+    padding: 0 var(--spacing-md);
+}
+
+/* Overlay oscuro para mejorar la legibilidad del texto */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* Oscurece la imagen para que el texto resalte */
+    background: rgba(0, 0, 0, 0.45); 
+}
+
+.hero-content {
+    z-index: 1;
+}
+
+.hero-content h1 {
+    font-size: 3.5em;
+    color: var(--color-light);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.hero-content h2 {
+    font-size: 1.5em;
+    color: var(--color-light);
+    margin-top: 10px;
+    font-weight: normal;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+
+/* ==================================== */
+/* 5. SECCIÓN NOSOTROS (ABOUT) */
+/* ==================================== */
+.about-section {
+    display: flex;
+    flex-direction: row; /* Desktop: Fila */
+    align-items: center;
+    padding: var(--spacing-lg) 5%;
+    gap: var(--spacing-lg);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-content {
+    flex: 1;
+    padding-right: var(--spacing-md);
+}
+
+.about-content p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.about-image {
+    flex: 1;
+    max-width: 500px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ==================================== */
+/* 6. SECCIÓN DE VIDEO */
+/* ==================================== */
+.video-section {
+    background-color: #e5d7c3; /* Color de fondo sutil para destacarse */
+    padding: var(--spacing-lg) 5%;
+    text-align: center;
+}
+
+.video-section .container {
+    padding: 0; /* Remover padding adicional del container */
+}
+
+.video-section h2 {
+    color: var(--color-primary);
+    margin-bottom: 10px;
+}
+
+.video-description {
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    color: var(--color-primary);
+}
+
+/* Contenedor responsivo para el video (16:9) */
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 800px; /* Limita el ancho máximo del video */
+    margin: 0 auto;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio (9 / 16 * 100) */
+    background-color: var(--color-dark);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.video-wrapper video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* ==================================== */
+/* 7. SECCIÓN COMPARACIÓN */
+/* ==================================== */
+.comparison-section {
+    padding: var(--spacing-lg) 5%;
+    text-align: center;
+}
+
+.comparison-section h3 {
+    margin-bottom: var(--spacing-lg);
+    font-size: 1.8em;
+}
+
+.comparison-grid {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    max-width: 1000px;
+    margin: 0 auto 40px auto;
+}
+
+.comparison-card {
+    flex: 1;
+    background-color: white;
+    padding: var(--spacing-md);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.comparison-card.victoria-card {
+    border: 3px solid var(--color-secondary);
+    background-color: #ffffff;
+    transform: translateY(-10px); /* Ligeramente elevado */
+    box-shadow: 0 6px 15px rgba(163, 127, 93, 0.3);
+}
+
+.comparison-card h4 {
+    color: var(--color-accent);
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+}
+
+.brand-info {
+    margin-bottom: var(--spacing-md);
+}
+
+.brand-points ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 15px;
+}
+
+.brand-points li {
+    padding: 5px 0;
+    border-bottom: 1px dotted #eee;
+    color: var(--color-primary);
+}
+
+.price-range {
+    margin-top: 15px;
+    font-weight: bold;
+    color: var(--color-primary);
+}
+
+.price-tag {
+    color: var(--color-secondary);
+    font-size: 1.1em;
+}
+
+.comparison-footer {
+    max-width: 800px;
+    margin: 0 auto;
+    padding-top: var(--spacing-md);
+    border-top: 1px solid #ddd;
+    text-align: center;
+}
+
+/* ==================================== */
+/* 8. SECCIÓN PRODUCTOS */
+/* ==================================== */
+.products-section {
+    padding: var(--spacing-lg) 5%;
+    text-align: center;
+    background-color: var(--color-light);
+}
+
+.products-section h3 {
+    margin-bottom: var(--spacing-lg);
+    font-size: 1.8em;
+}
+
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-md);
+}
+
+.product-card {
+    flex: 1 1 300px; /* Base 300px, crece y encoge */
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.product-card p {
+    color: var(--color-primary);
+    font-size: 0.9em;
+    text-align: justify;
+}
+
+/* ==================================== */
+/* 9. PIE DE PÁGINA (FOOTER) */
+/* ==================================== */
+.main-footer {
+    background-color: var(--color-dark);
+    color: var(--color-light);
+    padding: var(--spacing-md) 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9em;
+}
+
+.main-footer a {
+    color: var(--color-light);
+    margin-left: var(--spacing-md);
+    font-size: 1.2em;
+}
+
+.main-footer a:hover {
+    color: var(--color-secondary);
+}
+
+/* ==================================== */
+/* 10. MEDIA QUERIES (RESPONSIVIDAD) */
+/* ==================================== */
+
+@media (max-width: 900px) {
+    /* Ajustes para tabletas */
+    .about-section {
+        flex-direction: column; /* Apilar en dispositivos pequeños */
+        text-align: center;
+    }
+    .about-content {
+        padding-right: 0;
+        margin-bottom: var(--spacing-md);
+    }
+    .hero-content h1 {
+        font-size: 3em;
+    }
+    .comparison-grid {
+        flex-direction: column;
+    }
+    .comparison-card.victoria-card {
+        transform: none; /* Desactivar la elevación en móvil */
+    }
+    .main-nav {
+        padding: 10px 2%;
+    }
+}
+
+@media (max-width: 600px) {
+    /* Ajustes para móviles */
+    .main-nav {
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 0;
+    }
+    .nav-links {
+        /* En un proyecto real, estas reglas se manejarían con un botón de hamburguesa y JavaScript */
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+        text-align: center;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    .nav-links li {
+        width: 100%;
+    }
+    .nav-links a {
+        display: block;
+        padding: 10px 0;
+        border-bottom: none;
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    .hero-section {
+        height: 50vh;
+    }
+    .hero-content h1 {
+        font-size: 2.5em;
+    }
+    .hero-content h2 {
+        font-size: 1.2em;
+    }
+    .main-footer {
+        flex-direction: column;
+        text-align: center;
+    }
+    .main-footer .social-links {
+        margin-top: 10px;
+    }
+    .main-footer .social-links a {
+        margin: 0 10px;
+    }
+}

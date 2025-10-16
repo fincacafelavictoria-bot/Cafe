@@ -1,0 +1,189 @@
+/* ========================================= */
+/* --- Estilos Específicos: CONTACTO --- */
+/* (Para la página contacto.html) */
+/* ========================================= */
+
+.contact-section {
+    /* Padding general de la sección */
+    padding: var(--spacing-section-padding) var(--spacing-default);
+    background-color: var(--color-background-light);
+    text-align: center; /* Centra el contenedor principal */
+}
+
+/* 1. Bloque de Texto Introductorio (Centrado y Limitado) */
+/* Este contenedor asegura que los títulos y el párrafo se vean centrados y no pegados a la izquierda. */
+.contact-text-block {
+    max-width: 650px; /* Limita el ancho del texto para mejor legibilidad */
+    margin: 0 auto 40px auto; /* Centra el bloque de texto y da margen inferior */
+    text-align: center; /* Centra todo el texto dentro de este bloque (H2, H3, P) */
+}
+
+.contact-text-block h2 {
+    color: var(--color-secondary);
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+
+.contact-text-block h3 {
+    font-size: 1.8em;
+    color: var(--color-secondary);
+    margin-bottom: 15px;
+}
+.contact-text-block p {
+    color: var(--color-text-light);
+    line-height: 1.5;
+    margin: 0;
+}
+
+
+/* 2. Layout del Grid de Contacto (Formulario + Info) */
+.contact-grid {
+    display: grid;
+    /* Divide el espacio: 3 partes para el formulario, 2 para la info lateral */
+    grid-template-columns: 3fr 2fr; 
+    gap: 40px;
+    max-width: 1000px; /* Limita el ancho del grid para centrarlo */
+    margin: 0 auto; /* Centra el grid en la página */
+    text-align: left; /* El texto dentro del grid vuelve a la izquierda */
+}
+
+/* 3. Estilos de Contenedores y Sombra */
+.contact-form-container,
+.contact-info-container {
+    background-color: var(--color-background-white);
+    padding: 40px; 
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12); 
+}
+
+/* Título del formulario */
+.contact-form-container h3 {
+    text-align: center; /* Centra el título dentro del contenedor del formulario */
+    color: var(--color-secondary);
+    font-size: 1.8em;
+    font-weight: 700;
+    margin-bottom: 25px;
+    border-bottom: 2px solid var(--color-background-light); /* Separador sutil */
+    padding-bottom: 10px;
+}
+
+
+/* 4. Estilos del Formulario (Espaciado Profesional) */
+.form-group {
+    margin-bottom: 30px; /* Aumento la separación entre los campos */
+}
+
+.form-group label {
+    font-weight: 600;
+    color: var(--color-secondary);
+    display: block;
+    margin-bottom: 8px;
+    text-transform: uppercase; 
+    font-size: 0.9em;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    font-family: var(--font-family-main);
+    background-color: #fcfcfc;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--color-primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(160, 130, 107, 0.2); /* Efecto focus suave */
+}
+
+/* Botón de envío (Centrado) */
+.contact-form-container form {
+    text-align: center; 
+}
+
+.contact-form-container .cta-button {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block; /* Asegura que margin: auto lo centre */
+    max-width: 250px; 
+}
+
+
+/* 5. Estilos de Información de Contacto (Columna Derecha) */
+.contact-info-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    padding-bottom: 10px; 
+    border-bottom: 1px dashed var(--color-accent-card); 
+}
+
+.contact-info-item i {
+    font-size: 1.8em;
+    color: var(--color-primary); /* Color de la marca a los iconos */
+    margin-right: 15px;
+    width: 35px; 
+    text-align: center;
+    padding-top: 5px;
+}
+
+.info-text h4 {
+    margin-bottom: 5px;
+    color: var(--color-secondary);
+    font-size: 1.1em;
+    font-weight: 700;
+}
+
+.info-text p,
+.info-text a,
+.info-text address {
+    color: var(--color-text-light);
+    line-height: 1.4;
+}
+
+.info-text a:hover {
+    text-decoration: underline;
+}
+
+/* 6. Enlaces Sociales */
+.social-contact {
+    margin-top: 40px;
+    padding-top: 25px;
+    border-top: 2px solid var(--color-background-light);
+    text-align: center;
+}
+
+.social-contact h4 {
+    color: var(--color-secondary);
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.social-contact a {
+    font-size: 1.8em; 
+    margin: 0 10px;
+    color: var(--color-text-light);
+}
+
+.social-contact a:hover {
+    color: var(--color-primary);
+    transform: scale(1.1);
+    display: inline-block;
+}
+
+
+/* 7. Responsive Design para Contacto */
+@media (max-width: 992px) {
+    /* En tabletas y móviles, las columnas se apilan */
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
